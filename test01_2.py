@@ -2,7 +2,6 @@ import requests
 import json
 from BeautifulSoup import BeautifulSoup
 
-
 def get_sector(code):
     url = 'http://finance.naver.com/item/main.nhn?code=' + code
     r = requests.get(url)
@@ -14,8 +13,13 @@ def get_sector(code):
         sector = h4.a.text
 
     return sector
+
+
+
+        
     
-       
+    
+
     
     
 fn = 'data/krx_symbols.json'
@@ -26,7 +30,8 @@ with open(fn, 'r') as f:
 sector_list = []
 
 # len(stock_list)
-for s in stock_list[:]:
+# test  :10
+for s in stock_list[:10]:
     code = s['code'][1:]
     s['sector'] = get_sector(code)
     sector_list.append(s);

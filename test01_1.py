@@ -1,3 +1,7 @@
+#
+# Krx 홈페이지에서 종목정보가져옴  code, name, full_code
+#
+
 import requests
 import json
 from BeautifulSoup import BeautifulSoup
@@ -34,5 +38,4 @@ with open(fn, 'r') as f:
 # len(stock_list)
 for s in stock_list[:10]:
     print s['full_code'], s['code'][1:], s['name']
-    
     
